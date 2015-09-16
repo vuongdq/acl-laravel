@@ -30,7 +30,8 @@ Route::group(['prefix' => 'admin','middleware' => 'role:admin'], function()
 		get('add',['as'=>'admin.cates.getAdd','uses'=>'CateController@getAdd']);
 		post('add',['as'=>'admin.cates.postAdd','uses'=>'CateController@postAdd']);
 		get('list',['as'=>'admin.cates.list', 'uses'=> 'CateController@getList']);
-
+		get('edit/{id}',['as'=>'admin.cates.edit','uses'=>'CateController@getEdit']);
+		post('edit/{id}',['as'=>'admin.cates.edit','uses'=>'CateController@postEdit']);
 		get('delete/{id}',['as'=>'admin.cates.delete','uses'=>'CateController@getDelete']);
 	});
 

@@ -1,5 +1,7 @@
 @extends('admin.layouts.master')
-
+@section('title')
+	Add Category
+@endsection
 @section('content')
 
 <div class="col-md-6 col-md-offset-3">
