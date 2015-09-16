@@ -18,6 +18,8 @@ class CreateCatesTable extends Migration
             $table->string('alias');
             $table->integer('order');
             $table->integer('parent_id');
+            $table->integer('catetype_id')->unsigned();
+            $table->foreign('catetype_id')->references('id')->on('catetypes')->onDelete('cascade');
             $table->string('keywords');
             $table->string('description');
         });

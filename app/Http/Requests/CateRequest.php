@@ -25,13 +25,13 @@ class CateRequest extends Request
     {
         return [
             //
-        'txtName'   => 'required|unique:cates,name'
+        // 'txtName'   => 'required|unique:cates,name'
         ];
     }
     public function messages () {
         return [
-            'txtName.required'  => 'Please Enter Name Category',
-            'txtName.unique'    => 'This Name Category Is Exist'
+            // 'txtName.required'  => 'Please Enter Name Category',
+            // 'txtName.unique'    => 'This Name Category Is Exist'
         ];
     }
 }

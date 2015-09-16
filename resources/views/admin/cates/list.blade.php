@@ -14,6 +14,7 @@ Content
 			<th>user_id</th>
 			<th>Name</th>
 			<th>Parent</th>
+			<th>Category type</th>
 			<th>Action</th>
 
 		</tr>
@@ -25,7 +26,22 @@ Content
 			<td><?php echo $i+=1; ?></td>
 			<td>{!! $item['id'] !!}</td>
 			<td>{!! $item['name'] !!}</td>
-			<td>{!! $item['parent_id'] !!}</td>
+			<td>
+				@if ($item["parent_id"] == 0)
+                    {!! "None" !!}
+                @else
+                    <?php 
+                        $parent = DB::table('cates')->where('id',$item["parent_id"])->first();
+                        echo $parent->name;
+                    ?>
+                @endif
+            </td>
+			<td>	
+				<?php 
+                        $catetypename = DB::table('catetypes')->where('id',$item["catetype_id"])->first();
+                        echo $catetypename->name;
+                ?>
+			</td>
 			<td><a href="{!! url('admin/cate/edit',$item["id"]) !!}">Edit</a> / <a href="{!! url('admin/cate/delete',$item["id"]) !!}">Delete</a></td>
 		</tr>
 	@endforeach

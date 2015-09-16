@@ -8,13 +8,51 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CateRequest;
 use App\Cate;
+use App\Cate_type;
 
 class CateController extends Controller
 {
     //
+    // public function getAdd(){
+    //     $catetype = Cate_type::select('id','name')->get()->toArray();
+    //     $parent = Cate::select('id','name','parent_id')->get()->toArray();
+    //     return view('admin.cates.add',compact('parent','catetype'));
+    // }
+    // public function postAdd(CateRequest $request){
+    //     $cate = new Cate;
+
+    //     $cate->name        = $request->txtName;
+    //     $cate->alias       = changeTitle($request->txtName);
+    //     $cate->order       = $request->txtOrder;
+    //     $cate->parent_id   = $request->txtParent;
+    //     $cate->catetype_id =$request->txtCatetype;
+
+    //     $cate->keywords    = $request->txtKeywords;
+    //     $cate->description = $request->txtDescription;
+    //     $cate->save();
+    //     return redirect()->route('admin.cates.list')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete Add Category']);
+    // }
     public function getAdd(){
-        $parent = Cate::select('id','name','parent_id')->get()->toArray();
-        return view('admin.cates.add',compact('parent'));
+        $catetype = Cate_type::select('id','name')->get()->toArray();
+        return view('admin.cates.add',compact('catetype'));
+    }
+    public function getAddType($id){
+        $catetype = Cate_type::find($id)->first();
+        $parent = Cate::select('id','name','parent_id')->where('catetype_id',$id)->get()->toArray();
+        return view('admin.cates.addtype',compact('parent','catetype'));
+    }
+    public function postAddType(CateRequest $request,$id){
+        $cate = new Cate;
+
+        $cate->name        = $request->txtName;
+        $cate->alias       = changeTitle($request->txtName);
+        $cate->order       = $request->txtOrder;
+        $cate->parent_id   = $request->txtParent;
+        $cate->catetype_id =$id;
+        $cate->keywords    = $request->txtKeywords;
+        $cate->description = $request->txtDescription;
+        $cate->save();
+        return redirect()->route('admin.cates.list')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete Add Category']);
     }
     public function postAdd(CateRequest $request){
         $cate = new Cate;
@@ -23,6 +61,7 @@ class CateController extends Controller
         $cate->alias       = changeTitle($request->txtName);
         $cate->order       = $request->txtOrder;
         $cate->parent_id   = $request->txtParent;
+        $cate->catetype_id =$request->txtCatetype;
 
         $cate->keywords    = $request->txtKeywords;
         $cate->description = $request->txtDescription;
@@ -30,8 +69,9 @@ class CateController extends Controller
         return redirect()->route('admin.cates.list')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete Add Category']);
     }
     public function getList(){
-        $data = Cate::select('id','name','parent_id')->orderBy('id','DESC')->get()->toArray();
-        return view('admin.cates.list',compact('data'));
+        $catetype = Cate_type::select('id','name')->get()->toArray();
+        $data = Cate::select('id','name','parent_id','catetype_id')->orderBy('id','DESC')->get()->toArray();
+        return view('admin.cates.list',compact('data','catetype'));
     }
     public function getDelete($id){
         $parent = Cate::where('parent_id',$id)->count();
@@ -44,6 +84,7 @@ class CateController extends Controller
             
         }
     }
+
     public function getEdit($id){
         $data = Cate::find($id);
         $parent = Cate::select('id','name','parent_id')->get()->toArray();

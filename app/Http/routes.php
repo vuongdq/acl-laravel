@@ -25,14 +25,27 @@ get('/test/{id}','TestController@test');
 
 Route::group(['prefix' => 'admin','middleware' => 'role:admin'], function()
 {
+	get('/',['as'=>'admin.home','uses'=>'AdminController@home']);
 	Route::group(['prefix'=>'cate'], function()
 	{
 		get('add',['as'=>'admin.cates.getAdd','uses'=>'CateController@getAdd']);
-		post('add',['as'=>'admin.cates.postAdd','uses'=>'CateController@postAdd']);
 		get('list',['as'=>'admin.cates.list', 'uses'=> 'CateController@getList']);
+
+		get('add/{id}',['as'=>'admin.cates.getAddType','uses'=>'CateController@getAddType']);
+		post('add/{id}',['as'=>'admin.cates.postAddType','uses'=>'CateController@postAddType']);
+
 		get('edit/{id}',['as'=>'admin.cates.edit','uses'=>'CateController@getEdit']);
 		post('edit/{id}',['as'=>'admin.cates.edit','uses'=>'CateController@postEdit']);
+
 		get('delete/{id}',['as'=>'admin.cates.delete','uses'=>'CateController@getDelete']);
+	});
+	Route::group(['prefix'=>'catetype'],function(){
+		get('list',['as'=>'admin.catetype.getList','uses'=>'CatetypeController@getList']);
+		get('add',['as'=>'admin.catetype.getAdd','uses'=>'CatetypeController@getAdd']);
+		post('add',['as'=>'admin.catetype.postAdd','uses'=>'CatetypeController@postAdd']);
+		get('edit/{id}',['as'=>'admin.catetype.getEdit','uses'=>'CatetypeController@getEdit']);
+		post('edit/{id}',['as'=>'admin.catetype.postEdit','uses'=>'CatetypeController@postEdit']);
+		get('delete/{id}',['as'=>'admin.catetype.getDelete','uses'=>'CatetypeController@getDelete']);
 	});
 
 });

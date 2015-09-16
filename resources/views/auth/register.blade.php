@@ -1,6 +1,6 @@
 
 
-@extends('layouts.master')
+@extends('themes.vuongdq.master')
 
 
 @section('title')

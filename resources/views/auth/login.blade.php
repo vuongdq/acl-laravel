@@ -1,6 +1,6 @@
 
 
-@extends('layouts.master')
+@extends('themes.vuongdq.master')
 
 
 @section('title')
@@ -19,9 +19,9 @@
                         </div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">User Name</label>
+							<label class="col-md-4 control-label">Password</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="password">
+								<input type="password" class="form-control" name="password">
 							</div>
 						</div>
 

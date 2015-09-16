@@ -17,43 +17,14 @@ class TestController extends Controller
     //
 
     public function test($id){
-
-		$user = User::find($id);
-
-		if ($user->is('admin')) {
-			echo 'Admin';
-		}
-		elseif($user->is('mode')){
-			echo 'Mode';
-		}
-		elseif($user->is('member')){
-			echo 'member';
-
-		}
-		else{
-			echo 'Not Role';
-		}
-		echo '<br />';
-
-		if ($user->is('admin|mode')) { 
-			echo "Ban co quyen truy cap vao Admin";
-		}
-		else{
-			echo "xin loi! khong the truy cap";
-		}
-
-		if ($user->can(10)) {
-			echo 'You can create New User';
-		}
-		else{
-			echo "You can't create New Youser";
-		}
-		if ($user->can(11)) {
-			echo 'You can Delete New User';
-		}
-		else{
-			echo "You can't Delete New Youser";
-		}
+    	$user = User::find(1);
+		$user->attachRole(1);
+		$user = User::find(2);
+		$user->attachRole(2);
+		$user = User::find(3);
+		$user->attachRole(3);
+		$user = User::find(4);
+		$user->attachRole(4);
 
     	return view('test');
     }

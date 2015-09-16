@@ -14,7 +14,10 @@ class Cate extends Model
 
 	public $timestamps = false;
 
-	public function product () {
-		return $this->hasMany('App\Product');
+	public function article () {
+		return $this->hasMany('App\Article');
+	}
+	public function cate_type(){
+		return $this->belongTo('App\Cate_type');
 	}
 }

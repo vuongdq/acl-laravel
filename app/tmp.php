@@ -1,33 +1,35 @@
 <?php
-$createAdminRole = Role::create([
-			'id'=>1,
-			'name' => 'Admin Role',
-			'slug'	=>'admin',
-			'description'	=> 'Admin Role',
-			'level' => 1
+$adminRole = Role::create([
+		    'name' => 'Admin',
+		    'slug' => 'admin',
+		    'description' => '', // optional
+		    'level' => 1, // optional, set to 1 by default
+		]);
 
-			]);
-		$createModeratorRole = Role::create([
-			'id'=>2,
-			'name' => 'Moderator Role',
-			'slug'	=>'mode',
-			'description'	=> 'Moderator Role',
-			'level' => 2
-
-			]);
-		$createMemberRole = Role::create([
-			'id'=>3,
-			'name' => 'User Member',
-			'slug'	=>'member',
-			'description'	=> 'Register member',
-			'level' => 3
-
-			]);
-
-// AttachRole
+		$moderatorRole = Role::create([
+		    'name' => 'Moderator',
+		    'slug' => 'moderator',
+		    'level' =>2
+		]);
+		$moderatorRole = Role::create([
+		    'name' => 'Member',
+		    'slug' => 'member',
+		    'level' =>3
+		]);
+		$moderatorRole = Role::create([
+		    'name' => 'Banned',
+		    'slug' => 'banned',
+		    'level' =>4
+		]);
 
 		$user = User::find(1);
-		$user->attachRole(7);
+		$user->attachRole(1);
+		$user = User::find(2);
+		$user->attachRole(2);
+		$user = User::find(3);
+		$user->attachRole(3);
+		$user = User::find(4);
+		$user->attachRole(4);
 
 
 		//Permission
