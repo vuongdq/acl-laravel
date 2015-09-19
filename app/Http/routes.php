@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+get('/','HomeController@welcome');
 get('/register','Auth\AuthController@getRegister');
 post('/register','Auth\AuthController@postRegister');
 get('/login','Auth\AuthController@getLogin');
@@ -49,3 +47,12 @@ Route::group(['prefix' => 'admin','middleware' => 'role:admin'], function()
 	});
 
 });
+
+
+
+get('article/add',['as'=>'articles.getAdd','uses'=>'ArticleController@getAdd']);
+post('article/add',['as'=>'articles.postAdd','uses'=>'ArticleController@postAdd']);
+
+
+
+

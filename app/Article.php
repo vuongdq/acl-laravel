@@ -9,7 +9,7 @@ class Article extends Model
     //
     protected $table = 'articles';
 
-	protected $fillable = ['name','alias','price','intro','content','image','keywords','description','user_id','cate_id','articles_id'];
+	protected $fillable = ['name','alias','price','intro','content','image','keywords','description','user_id','cate_id'];
 
 	public $timestamps = false;
 
@@ -20,7 +20,7 @@ class Article extends Model
 	public function user () {
 		return $this->belongTo('App\User');
 	}
-	public function article_type() {
-		$return $this->belongTo('App\Articles_type');
-	}
+	// public function article_type() {
+	// 	$return $this->belongTo('App\Articles_type');
+	// }
 }
