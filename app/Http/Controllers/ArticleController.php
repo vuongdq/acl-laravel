@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use
-Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Cate_type;
 use App\Cate;
 use App\Article;
 use Auth;
+
 class ArticleController extends Controller
 {
     //
    public function getAdd(){
    		$id=1; // Catetype id =1~ Articles!
         $catetype = Cate_type::find($id)->first();
-        $parent = Cate::select('id','name','parent_id')->where('catetype_id',$id)->get()->toArray();
+        $parent = Cate::select('id','name','parent_id')->where('catetype_id',$id)->get()->toArray()
 
         return view('modules.articles.add',compact('catetype','parent'));
     }

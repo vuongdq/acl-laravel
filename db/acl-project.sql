@@ -3,11 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
-<<<<<<< HEAD
 -- Generation Time: Sep 17, 2015 at 12:05 PM
-=======
--- Generation Time: Sep 17, 2015 at 05:42 AM
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -23,7 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `acl-project`
 --
-<<<<<<< HEAD
 
 -- --------------------------------------------------------
 
@@ -70,10 +65,6 @@ CREATE TABLE IF NOT EXISTS `articles_types` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-=======
-CREATE DATABASE IF NOT EXISTS `acl-project` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `acl-project`;
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 
 -- --------------------------------------------------------
 
@@ -92,11 +83,7 @@ CREATE TABLE IF NOT EXISTS `cates` (
   `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-=======
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 
 --
 -- Dumping data for table `cates`
@@ -124,11 +111,7 @@ CREATE TABLE IF NOT EXISTS `catetypes` (
   `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-=======
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 
 --
 -- Dumping data for table `catetypes`
@@ -157,7 +140,6 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-<<<<<<< HEAD
 --
 -- Dumping data for table `migrations`
 --
@@ -176,8 +158,6 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2015_09_16_131611_create_article_type', 1),
 ('2015_09_16_131636_create_article_table', 1);
 
-=======
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 -- --------------------------------------------------------
 
 --
@@ -211,13 +191,8 @@ CREATE TABLE IF NOT EXISTS `permissions` (
 --
 
 INSERT INTO `permissions` (`id`, `name`, `slug`, `description`, `model`, `created_at`, `updated_at`) VALUES
-<<<<<<< HEAD
 (10, 'Create users', 'create.users', '', NULL, '2015-09-15 18:08:24', '2015-09-15 18:08:24'),
 (11, 'Delete users', 'delete.users', NULL, NULL, '2015-09-15 18:08:24', '2015-09-15 18:08:24');
-=======
-(10, 'Create users', 'create.users', '', NULL, '2015-09-16 01:08:24', '2015-09-16 01:08:24'),
-(11, 'Delete users', 'delete.users', NULL, NULL, '2015-09-16 01:08:24', '2015-09-16 01:08:24');
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 
 -- --------------------------------------------------------
 
@@ -290,17 +265,10 @@ CREATE TABLE IF NOT EXISTS `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `slug`, `description`, `level`, `created_at`, `updated_at`) VALUES
-<<<<<<< HEAD
 (1, 'Admin', 'admin', '', 1, '2015-09-15 23:48:24', '2015-09-15 23:48:24'),
 (2, 'Moderator', 'moderator', NULL, 2, '2015-09-15 23:48:24', '2015-09-15 23:48:24'),
 (3, 'Member', 'member', NULL, 3, '2015-09-15 23:48:24', '2015-09-15 23:48:24'),
 (4, 'Banned', 'banned', NULL, 4, '2015-09-15 23:48:24', '2015-09-15 23:48:24');
-=======
-(1, 'Admin', 'admin', '', 1, '2015-09-16 06:48:24', '2015-09-16 06:48:24'),
-(2, 'Moderator', 'moderator', NULL, 2, '2015-09-16 06:48:24', '2015-09-16 06:48:24'),
-(3, 'Member', 'member', NULL, 3, '2015-09-16 06:48:24', '2015-09-16 06:48:24'),
-(4, 'Banned', 'banned', NULL, 4, '2015-09-16 06:48:24', '2015-09-16 06:48:24');
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 
 -- --------------------------------------------------------
 
@@ -321,17 +289,10 @@ CREATE TABLE IF NOT EXISTS `role_user` (
 --
 
 INSERT INTO `role_user` (`id`, `role_id`, `user_id`, `created_at`, `updated_at`) VALUES
-<<<<<<< HEAD
 (1, 1, 1, '2015-09-15 23:52:10', '2015-09-15 23:52:10'),
 (2, 2, 2, '2015-09-15 23:52:10', '2015-09-15 23:52:10'),
 (3, 3, 3, '2015-09-15 23:52:10', '2015-09-15 23:52:10'),
 (4, 4, 4, '2015-09-15 23:52:10', '2015-09-15 23:52:10');
-=======
-(1, 1, 1, '2015-09-16 06:52:10', '2015-09-16 06:52:10'),
-(2, 2, 2, '2015-09-16 06:52:10', '2015-09-16 06:52:10'),
-(3, 3, 3, '2015-09-16 06:52:10', '2015-09-16 06:52:10'),
-(4, 4, 4, '2015-09-16 06:52:10', '2015-09-16 06:52:10');
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 
 -- --------------------------------------------------------
 
@@ -354,24 +315,16 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-<<<<<<< HEAD
 (1, 'Admin', 'admin@gmail.com', '$2y$10$ydzJ1MsbPJmOpzN8Uvl9WuRR8bsso0e71uWnt7syvnerCQcdyij/G', 'MChuMCvkKxwzeOJfsmHYmknfHQ93HUu5YnppO5Yf1OoTWlvagEArXvlrI3Es', '2015-09-15 23:42:00', '2015-09-16 02:30:27'),
 (2, 'mode', 'mode@gmail.com', '$2y$10$kn1sT6djuasBoAUTkjyL/e/RnRF4PtvMwM3gJaOLWi6JotyxnFC0.', 'xzzbb54bPPGXeNVetcSiHtqKaQRrGRKVZsG6mPJ1aqnh0a4TO62wdMadCu1h', '2015-09-15 23:42:35', '2015-09-16 01:56:28'),
 (3, 'member', 'member@gmail.com', '$2y$10$eqyTw8Kh9LjZHRR02kdnEutiJJRBV3btFMGWg65SD2CPug9oYLNC6', 'BTi1ZOzGvCNhoYf5aWUfFzbZPbEubzjLbbmXfYk46xLpJVxNyD3Eylk0yLor', '2015-09-15 23:43:01', '2015-09-16 02:30:09'),
 (4, 'banned', 'banned@gmail.com', '$2y$10$dI6MgU5mrKYtUUxHw/Jjl.aEForxBkKAeOvVRfp2CkV8UG7DGugdq', 'n25fGTBL0F9nNiCWguNX9ryn6evIN0aTuReMRFTaCR0mNno8wlnMVbAyY1fP', '2015-09-15 23:51:25', '2015-09-16 02:00:44');
-=======
-(1, 'Admin', 'admin@gmail.com', '$2y$10$ydzJ1MsbPJmOpzN8Uvl9WuRR8bsso0e71uWnt7syvnerCQcdyij/G', 'MChuMCvkKxwzeOJfsmHYmknfHQ93HUu5YnppO5Yf1OoTWlvagEArXvlrI3Es', '2015-09-16 06:42:00', '2015-09-16 09:30:27'),
-(2, 'mode', 'mode@gmail.com', '$2y$10$kn1sT6djuasBoAUTkjyL/e/RnRF4PtvMwM3gJaOLWi6JotyxnFC0.', 'xzzbb54bPPGXeNVetcSiHtqKaQRrGRKVZsG6mPJ1aqnh0a4TO62wdMadCu1h', '2015-09-16 06:42:35', '2015-09-16 08:56:28'),
-(3, 'member', 'member@gmail.com', '$2y$10$eqyTw8Kh9LjZHRR02kdnEutiJJRBV3btFMGWg65SD2CPug9oYLNC6', 'BTi1ZOzGvCNhoYf5aWUfFzbZPbEubzjLbbmXfYk46xLpJVxNyD3Eylk0yLor', '2015-09-16 06:43:01', '2015-09-16 09:30:09'),
-(4, 'banned', 'banned@gmail.com', '$2y$10$dI6MgU5mrKYtUUxHw/Jjl.aEForxBkKAeOvVRfp2CkV8UG7DGugdq', 'n25fGTBL0F9nNiCWguNX9ryn6evIN0aTuReMRFTaCR0mNno8wlnMVbAyY1fP', '2015-09-16 06:51:25', '2015-09-16 09:00:44');
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 
 --
 -- Indexes for dumped tables
 --
 
 --
-<<<<<<< HEAD
 -- Indexes for table `articles`
 --
 ALTER TABLE `articles`
@@ -387,8 +340,6 @@ ALTER TABLE `articles_types`
   ADD PRIMARY KEY (`id`);
 
 --
-=======
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 -- Indexes for table `cates`
 --
 ALTER TABLE `cates`
@@ -468,7 +419,6 @@ ALTER TABLE `users`
 --
 
 --
-<<<<<<< HEAD
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
@@ -483,21 +433,11 @@ ALTER TABLE `articles_types`
 --
 ALTER TABLE `cates`
   MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
-=======
--- AUTO_INCREMENT for table `cates`
---
-ALTER TABLE `cates`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 --
 -- AUTO_INCREMENT for table `catetypes`
 --
 ALTER TABLE `catetypes`
-<<<<<<< HEAD
   MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
-=======
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 --
 -- AUTO_INCREMENT for table `permissions`
 --
@@ -538,7 +478,6 @@ ALTER TABLE `users`
 --
 
 --
-<<<<<<< HEAD
 -- Constraints for table `articles`
 --
 ALTER TABLE `articles`
@@ -546,8 +485,6 @@ ALTER TABLE `articles`
   ADD CONSTRAINT `articles_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
-=======
->>>>>>> ceec422df222f89ccca673ac549d1400eb55d131
 -- Constraints for table `cates`
 --
 ALTER TABLE `cates`
