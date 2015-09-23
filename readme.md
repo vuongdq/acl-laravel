@@ -4,4 +4,4 @@ use:
 https://github.com/romanbican/roles
 Thank you
 
-http://wwww.friv4schoolgames.net
+http://www.friv4schoolgames.net
