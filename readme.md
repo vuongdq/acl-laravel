@@ -17,5 +17,18 @@ How to use:
 - Run: php artisan serve
 - go to: localhost:8000
 
+
+
+Role:
++Admin: admin@gmail.com
++Moderator: mode@gmail.com
++Member: member@gmail.com
++Banned: banned@gmail.com
+
+
+All Pass: 123456
+
+
+
 Thanks!
 Goodluck!

@@ -45,13 +45,14 @@ Route::group(['prefix' => 'admin','middleware' => 'role:admin'], function()
 		post('edit/{id}',['as'=>'admin.catetype.postEdit','uses'=>'CatetypeController@postEdit']);
 		get('delete/{id}',['as'=>'admin.catetype.getDelete','uses'=>'CatetypeController@getDelete']);
 	});
-
+    Route::group(['prefix'=>'article'],function(){
+        get('article/add',['as'=>'admin.articles.getAdd','uses'=>'ArticleController@getAdd']);
+        post('article/add',['as'=>'admin.articles.postAdd','uses'=>'ArticleController@postAdd']);
+    });
 });
 
 
 
-get('article/add',['as'=>'articles.getAdd','uses'=>'ArticleController@getAdd']);
-post('article/add',['as'=>'articles.postAdd','uses'=>'ArticleController@postAdd']);
 
 
 
