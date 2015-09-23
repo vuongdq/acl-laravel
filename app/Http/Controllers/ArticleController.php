@@ -17,7 +17,7 @@ class ArticleController extends Controller
    public function getAdd(){
    		$id=1; // Catetype id =1~ Articles!
         $catetype = Cate_type::find($id)->first();
-        $parent = Cate::select('id','name','parent_id')->where('catetype_id',$id)->get()->toArray()
+        $parent = Cate::select('id','name','parent_id')->where('catetype_id',$id)->get()->toArray();
 
         return view('modules.articles.add',compact('catetype','parent'));
     }
@@ -34,6 +34,6 @@ class ArticleController extends Controller
         $article->user_id = Auth::user()->id;
         $article->cate_id = $request->txtParent;
         $article->save();
-         return redirect('/')->with(['flash_level'=>'success','flash_message'=>'Success !! Complate Delete Category']);
+        return redirect('/')->with(['flash_level'=>'success','flash_message'=>'Success !! Complate Delete Category']);
     }
 }

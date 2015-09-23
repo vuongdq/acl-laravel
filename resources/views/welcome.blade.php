@@ -6,7 +6,10 @@
 
 @section('content')
 <div class="row">
-	<div class="col-md-12">
+    <div class="col-md-9">
+        Xin chao!
+    </div>
+	<div class="col-md-3">
 		@role(1)
 <!-- Role Id =1 -->
 	 <a href="{!! url('admin') !!}"><button type="button" class="btn btn-default">Admin</button></a> 
@@ -23,7 +26,9 @@
 <!-- Role Id =4 -->
 	Banned Area!!!
 @endrole
+        <a href="{!! url('article/add') !!}"><button type="button" class="btn btn-default">Add New Articles</button></a>
 	</div>
+
 </div>
 
 <br />
