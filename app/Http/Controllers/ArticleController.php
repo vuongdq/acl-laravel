@@ -19,7 +19,7 @@ class ArticleController extends Controller
         $catetype = Cate_type::find($id)->first();
         $parent = Cate::select('id','name','parent_id')->where('catetype_id',$id)->get()->toArray();
 
-        return view('modules.articles.add',compact('catetype','parent'));
+        return view('admin.articles.add',compact('catetype','parent'));
     }
     public function postAdd(Request $request){
         $article = new Article;

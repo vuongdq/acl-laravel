@@ -26,7 +26,7 @@
 <!-- Role Id =4 -->
 	Banned Area!!!
 @endrole
-        <a href="{!! url('article/add') !!}"><button type="button" class="btn btn-default">Add New Articles</button></a>
+        <a href="{!! url('admin/article/add') !!}"><button type="button" class="btn btn-default">Add New Articles</button></a>
 	</div>
 
 </div>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 17, 2015 at 12:05 PM
+-- Generation Time: Sep 23, 2015 at 05:09 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `cate_id` int(10) unsigned NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `articles`
@@ -48,7 +48,13 @@ CREATE TABLE IF NOT EXISTS `articles` (
 
 INSERT INTO `articles` (`id`, `name`, `alias`, `price`, `intro`, `content`, `image`, `keywords`, `description`, `user_id`, `cate_id`, `created_at`, `updated_at`) VALUES
 (1, '11111', '', 1111, '111', '111', '', '1111', '1111', 1, 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, '111112222', '', 1111, '111', '111', '', '1111', '1111', 1, 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(3, '111112222', '', 1111, '111', '111', '', '1111', '1111', 1, 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, '2222', '', 222222, '22222', '22222', '', '22222', '222222', 1, 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, '2222vuongddddddd', '', 2222, '2222', '2222', '', '2222', '2222', 3, 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 'dong quoc vuong22112312323232', '', 0, 'dong quoc vuong22112312323232', 'dong quoc vuong22112312323232', '', 'dong quoc vuong22112312323232', 'dong quoc vuong22112312323232', 1, 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(9, 'xinc hao acac ban', '', 0, 'xinc hao acac ban', 'xinc hao acac ban', '', 'xinc hao acac ban', 'xinc hao acac ban', 1, 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(16, 'Quan ao 2Quan ao 2Quan ao 2', '', 0, 'Quan ao 2', '', '', '', '', 1, 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(19, 'xin chao cac ban kkkkkwww', '', 0, '', '', '', '', '', 1, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -83,19 +89,19 @@ CREATE TABLE IF NOT EXISTS `cates` (
   `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `cates`
 --
 
 INSERT INTO `cates` (`id`, `name`, `alias`, `order`, `parent_id`, `catetype_id`, `keywords`, `description`, `created_at`, `updated_at`) VALUES
+(0, 'none', 'none', 1, 0, 1, 'none', 'none', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (5, 'Quần áo nam', 'quan-ao-nam', 1, 0, 1, 'Quần áo nam', 'Quần áo nam', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (6, 'quan ao nu da sua', 'quan-ao-nu-da-sua', 0, 5, 1, 'Quan ao nu', 'Quan ao nu', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (7, 'vuongdq', 'vuongdq', 0, 5, 1, 'vuongdq', 'vuongdq', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (8, '123', '123', 123, 5, 2, '123', '123', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(9, 'test222222', 'test222222', 0, 5, 1, 'test2', 'test2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(10, 'blog cate22222', 'blog-cate22222', 0, 0, 3, 'blog cate22222', 'blog cate', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(9, 'test222222', 'test222222', 0, 5, 1, 'test2', 'test2', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -111,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `catetypes` (
   `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `catetypes`
@@ -120,14 +126,12 @@ CREATE TABLE IF NOT EXISTS `catetypes` (
 INSERT INTO `catetypes` (`id`, `name`, `alias`, `keywords`, `description`, `created_at`, `updated_at`) VALUES
 (1, 'Articles', 'articles', 'Articles', 'Articles', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (2, 'product', 'product', 'product', 'product', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 'Blog', 'blog', 'blog', 'blog', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (4, 'rao vat', 'rao-vat', 'rao vat', 'rao vat', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (5, 'test', 'test', 'test', 'test', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (6, 'test2', 'test2', 'test2', 'test2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (7, 'test2', 'test2', 'test2', 'test2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (8, 'test2', 'test2', 'test2', 'test2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(9, 'test2', 'test2', 'test2', 'test2', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(10, 'test2', 'test2', 'test2', 'test2', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(9, 'test2', 'test2', 'test2', 'test2', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -315,9 +319,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@gmail.com', '$2y$10$ydzJ1MsbPJmOpzN8Uvl9WuRR8bsso0e71uWnt7syvnerCQcdyij/G', 'MChuMCvkKxwzeOJfsmHYmknfHQ93HUu5YnppO5Yf1OoTWlvagEArXvlrI3Es', '2015-09-15 23:42:00', '2015-09-16 02:30:27'),
-(2, 'mode', 'mode@gmail.com', '$2y$10$kn1sT6djuasBoAUTkjyL/e/RnRF4PtvMwM3gJaOLWi6JotyxnFC0.', 'xzzbb54bPPGXeNVetcSiHtqKaQRrGRKVZsG6mPJ1aqnh0a4TO62wdMadCu1h', '2015-09-15 23:42:35', '2015-09-16 01:56:28'),
-(3, 'member', 'member@gmail.com', '$2y$10$eqyTw8Kh9LjZHRR02kdnEutiJJRBV3btFMGWg65SD2CPug9oYLNC6', 'BTi1ZOzGvCNhoYf5aWUfFzbZPbEubzjLbbmXfYk46xLpJVxNyD3Eylk0yLor', '2015-09-15 23:43:01', '2015-09-16 02:30:09'),
+(1, 'Admin', 'admin@gmail.com', '$2y$10$ydzJ1MsbPJmOpzN8Uvl9WuRR8bsso0e71uWnt7syvnerCQcdyij/G', 'IYiNXAnKEEI42wuNpkHBqbcomPDcuHVr9pHR7cXZrqcM0tpeOPTYuMjIu798', '2015-09-15 23:42:00', '2015-09-23 07:32:49'),
+(2, 'mode', 'mode@gmail.com', '$2y$10$kn1sT6djuasBoAUTkjyL/e/RnRF4PtvMwM3gJaOLWi6JotyxnFC0.', 'qlPrBMlUYeNk87TLzAvvkpSCoJDpr8FeHxuVqm2j9hDTEQR3vET9y8puw235', '2015-09-15 23:42:35', '2015-09-22 03:58:10'),
+(3, 'member', 'member@gmail.com', '$2y$10$eqyTw8Kh9LjZHRR02kdnEutiJJRBV3btFMGWg65SD2CPug9oYLNC6', '6Ch4Ha1S9dDYSh1ZmJvVS0VN61okjlO925Tj77WP6Ra8IUeEOXnnKiz4jPJA', '2015-09-15 23:43:01', '2015-09-23 07:47:31'),
 (4, 'banned', 'banned@gmail.com', '$2y$10$dI6MgU5mrKYtUUxHw/Jjl.aEForxBkKAeOvVRfp2CkV8UG7DGugdq', 'n25fGTBL0F9nNiCWguNX9ryn6evIN0aTuReMRFTaCR0mNno8wlnMVbAyY1fP', '2015-09-15 23:51:25', '2015-09-16 02:00:44');
 
 --
@@ -422,7 +426,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `articles_types`
 --
@@ -432,12 +436,12 @@ ALTER TABLE `articles_types`
 -- AUTO_INCREMENT for table `cates`
 --
 ALTER TABLE `cates`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `catetypes`
 --
 ALTER TABLE `catetypes`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `permissions`
 --
