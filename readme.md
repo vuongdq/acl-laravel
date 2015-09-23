@@ -20,10 +20,10 @@ How to use:
 
 
 Role:
-+Admin: admin@gmail.com
-+Moderator: mode@gmail.com
-+Member: member@gmail.com
-+Banned: banned@gmail.com
+++Admin: admin@gmail.com
+++Moderator: mode@gmail.com
+++Member: member@gmail.com
+++Banned: banned@gmail.com
 
 
 All Pass: 123456
